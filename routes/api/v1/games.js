@@ -14,7 +14,9 @@ router.get("/", function(req, res, next) {
       res.status(500).send({error})
     });
 });
-
+// lists all games
+// returns 200 code and game object on success
+// returns 400 code and error object on failure
 router.get("/:id", function (req, res, next) {
 Game.findAll({
     where: {
@@ -31,7 +33,8 @@ Game.findAll({
   });
 });
 
-/ updates the specific information of a game with an id appended in the uri 
+
+// updates the specific information of a game with an id appended in the uri
 router.put("/:id", function (req, res, next){
     Game.update(
       {
@@ -56,7 +59,7 @@ router.put("/:id", function (req, res, next){
         res.status(500).send({ error });
       })
 });
-/ take a second look at this promise ^
+// take a second look at this promise ^
 router.delete("/:id", function(req, res, next) {
   Game.destroy({
     where: {
