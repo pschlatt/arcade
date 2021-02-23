@@ -33,6 +33,7 @@ Game.findAll({
   });
 });
 
+
 // updates the specific information of a game with an id appended in the uri
 router.put("/:id", function (req, res, next){
     Game.update(
