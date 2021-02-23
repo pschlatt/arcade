@@ -31,6 +31,7 @@ Game.findAll({
   });
 });
 
+/ updates the specific information of a game with an id appended in the uri 
 router.put("/:id", function (req, res, next){
     Game.update(
       {
@@ -55,7 +56,7 @@ router.put("/:id", function (req, res, next){
         res.status(500).send({ error });
       })
 });
-
+/ take a second look at this promise ^
 router.delete("/:id", function(req, res, next) {
   Game.destroy({
     where: {
